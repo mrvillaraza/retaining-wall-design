@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>Retaining Wall Design</title>
+		
+		<!-- Responsive Meta Tag -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+		<!-- Custom CSS -->
+		<link rel = "stylesheet" href = "assets/styles/style.css">
+
+	</head>
+
+	<body>
+		<!-- Enter intro here -->
+
+		<section class="container-fluid">
+			
+			<div class="row">
+
+				<div class="col-md-5 col-sm-12 colDisplay">
+
+					<div>
+						
+						<hr>
+
+						<div>
+							<label for = "wallHeight" class="userInput">Wall Height, H (mm) :</label>
+							<input type = "number" id = "wallHeight">
+						</div>
+
+						<div>
+							<label for = "stemThickness" class="userInput">Stem Thickness, t<sub>s</sub> (mm) :</label>
+							<input type = "number" id = "stemThickness">
+						</div>
+
+						<div>
+							<label for = "footingLength" class="userInput">Footing Length, L (mm) :</label>
+							<input type = "number" id = "footingLength">
+						</div>
+
+						<div>
+							<label for = "toeLength" class="userInput">Toe Length, L<sub>t</sub> (mm) :</label>
+							<input type = "number" id = "toeLength">
+						</div>
+
+						<div>
+							<label for = "footingThickness" class="userInput">Footing Thickness, t<sub>f</sub> (mm) :</label>
+							<input type = "number" id = "footingThickness">
+						</div>
+
+						<hr>
+
+					</div>
+
+		<!-- ================================================================== -->
+
+					<div>
+						
+						<div>
+							<label for = "soilSlopeAngle" class="userInput">Soil Slope Angle, &theta; (deg) :</label>
+							<input type = "number" id = "soilSlopeAngle">
+						</div>
+
+						<div>
+							<label for = "backSoilUnitWeight" class="userInput">Back Soil Unit Weight, &gamma;<sub>2</sub> (kN/m<sup>3</sup>) :</label>
+							<input type = "number" id = "backSoilUnitWeight">
+						</div>
+
+						<div>
+							<label for = "includeKey" class="userInput">Is Key Included? </label>
+							<select id="includeKey">
+								<option value="NO">NO</option>
+								<option value="YES">YES</option>
+							</select>
+						</div>
+
+						<!-- Inputs depending on #includeKey choices, default is NO-->
+						<div id="keyDimension">
+
+						</div>
+
+						<hr>
+
+					</div>
+
+		<!-- ================================================================== -->
+
+					<div>
+						
+						<div>
+							<label for = "includeWaterTable" class="userInput">Include Water Table?</label>
+							<select id="includeWaterTable">
+								<option value="NO">NO</option>
+								<option value="YES">YES</option>
+							</select>
+						</div>
+
+						<div id="waterTableChoice">
+							
+						</div>
+
+						<hr>
+
+					</div>
+
+		<!-- ================================================================== -->
+
+					<div>
+
+						<div>
+							<label for = "soilThicknessToe" class="userInput">Soil Thickness Over Toe, t<sub>o</sub> (mm) :</label>
+							<input type = "number" id = "soilThicknessToe">
+						</div>
+
+						<div>
+							<label for = "frontSoilUnitWeight" class="userInput">Front Soil Unit Weight, &gamma;<sub>4</sub> (kN/m<sup>3</sup>) :</label>
+							<input type = "number" id = "frontSoilUnitWeight">
+						</div>
+
+						<div>
+							<label for = "baseFrictionCoefficient" class="userInput">Base Friction Coefficient, &mu; :</label>
+							<input type = "number" id = "baseFrictionCoefficient">
+						</div>
+
+						<div>
+							<label for = "includeFricAngle" class="userInput">Use Friction Angle?</label>
+							<select id="includeFricAngle">
+								<option value="YES">YES</option>
+								<option value="NO">NO</option>
+							</select>
+						</div>
+
+						<div id="soilChoice">
+							
+							<div>
+								<label for = "backSoilFricAngle" class="userInput">Back Soil Friction Angle, &Phi;<sub>2</sub> (deg) :</label>
+								<input type = "number" id = "backSoilFricAngle">
+							</div>
+
+							<div>
+								<label for = "frontSoilFricAngle" class="userInput">Front Soil Friction Angle, &Phi;<sub>4</sub> (deg) :</label>
+								<input type = "number" id = "frontSoilFricAngle">
+							</div>
+
+							<div>
+								<label for = "fricAngleReduction" class="userInput">Friction Angle Reduction, &Phi;<sub>u, &Phi;</sub> (deg) :</label>
+								<input type = "number" id = "fricAngleReduction">
+							</div>
+
+						</div>
+
+						<hr>
+
+					</div>
+
+		<!-- ================================================================== -->		
+					<div>
+						
+						<div>
+							<label for = "includeStrucLoad" class="userInput">Include Loads on Structure?</label>
+							<select id="includeStrucLoad">
+								<option value="NO">NO</option>
+								<option value="YES">YES</option>
+							</select>
+						</div>
+
+
+						<div id="strucLoad">
+
+						</div>
+
+						<hr>
+
+					</div>
+
+		<!-- ================================================================== -->		
+					<div>
+						
+						<div>
+							<label for = "includeSurchargeLoad" class="userInput">Include Surcharge Load?</label>
+							<select id="includeSurchargeLoad">
+								<option value="NO">NO</option>
+								<option value="YES">YES</option>
+							</select>
+						</div>
+
+						<div id="surchargeLoad">
+						
+						</div>
+
+						<div>
+							<label for = "allowSoilCap" class="userInput">Allow. Soil Bearing Capacity, q<sub>a</sub> (kPa) :</label>
+							<input type = "number" id = "allowSoilCap">
+						</div>
+
+						<hr>
+
+					</div>
+
+		<!-- ================================================================= -->		
+					<div>
+
+						<div>
+							<label for = "stemConstructionMethod" class="userInput">Stem Construction Method :</label>
+							<select id="stemConstructionMethod">
+								<option value="RC">Reinforced Concrete</option>
+								<option value="GFB">Grout Filled Block</option>
+							</select>
+						</div>
+
+						<div id = 'stemConstructionChoice'>
+							
+						</div>
+
+						<div>
+							<label for = "concreteStrength" class="userInput" required>Concrete Strength, f<sub>c</sub> (MPa) :</label>
+							<input type = "number" id = "concreteStrength" required>
+						</div>
+
+						<div>
+							<label for = "steelYieldStrength" class="userInput">Steel Yield Strength, f<sub>sy</sub> (MPa) :</label>
+							<select id="steelYieldStrength">
+								<option value="400">400</option>
+								<option value="500">500</option>
+							</select>
+						</div>
+
+						<div>
+							<label for = "reoCover" class="userInput">Clear Cover to Reinforcement, c (mm) :</label>
+							<input type = "number" id = "reoCover">
+						</div>
+
+						<div>
+							<label for = "stemBarDiameter" class="userInput">Stem Bar Diameter, d<sub>stem</sub> (mm) :</label>
+							<select id="stemBarDiameter">
+								<option value="12">12</option>
+								<option value="16">16</option>
+								<option value="20">20</option>
+								<option value="24">24</option>
+								<option value="28">28</option>
+								<option value="32">32</option>
+								<option value="36">36</option>
+							</select>
+						</div>
+
+						<div>
+							<label for = "heelBarDiameter" class="userInput">Heel Bar Diameter, d<sub>heel</sub> (mm) :</label>
+							<select id="heelBarDiameter">
+								<option value="12">12</option>
+								<option value="16">16</option>
+								<option value="20">20</option>
+								<option value="24">24</option>
+								<option value="28">28</option>
+								<option value="32">32</option>
+								<option value="36">36</option>
+							</select>
+						</div>
+
+						<div>
+							<label for = "toeBarDiameter" class="userInput">Toe Bar Diameter, d<sub>toe</sub> (mm) :</label>
+							<select id="toeBarDiameter">
+								<option value="12">12</option>
+								<option value="16">16</option>
+								<option value="20">20</option>
+								<option value="24">24</option>
+								<option value="28">28</option>
+								<option value="32">32</option>
+								<option value="36">36</option>
+							</select>
+						</div>
+
+						<hr>
+
+					</div>
+
+					<div class="d-flex justify-content-center">
+						<button id="calculateDesign" type="button" class="btn btn-success">Calculate</button>
+					</div>
+
+				</div> <!-- closing column div -->
+
+				<!-- Display results here -->
+				<div id="designDisplay" class="col-md-7 col-sm-12 colDisplay">
+
+				</div>
+
+			</div> <!-- closing row div -->
+
+
+		</section>
+
+
+		<!-- JS scripts for Bootstrap-->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+		</script>
+
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+		</script>
+			
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+		</script>
+
+		<!-- Custom JS script -->
+		<script src = "assets/scripts/script.js"></script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+

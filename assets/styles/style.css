@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.userInput {
+	/*float: left;*/
+	width: 300px;
+	text-align: right;
+	padding-right: 10px
+}
+
+input[type = "number"] {
+	text-align: center;
+	width: 120px;
+}
+
+.colDisplay {
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+}
+
