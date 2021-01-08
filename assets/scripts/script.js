@@ -24,6 +24,9 @@ let stemConstructionChoice = document.querySelector('#stemConstructionChoice');
 let calculateDesign = document.querySelector('#calculateDesign');
 let designDisplay = document.querySelector('#designDisplay');
 
+let downloadResult = document.querySelector('#downloadResult'); 
+let downloadAllow = false;
+
 // assume material properties
 let concreteUnitWeight = 24; // @24 kN/m3
 
@@ -442,6 +445,8 @@ calculateDesign.onclick = () => {
 	}
 
 	console.log('Design Computations Completed')
+	downloadAllow = true;
+	downloadResult.className = 'btn btn-primary';
 
 //=======================================================================
 
@@ -504,8 +509,65 @@ calculateDesign.onclick = () => {
 			<li>Stress at Toe Root, q<sub>toe</sub> = ${qToe.toFixed(2)} kPa</li>
 		</p>
 
+		<table id="resultTable">
+			<tr>
+				<td>Parameter 1</td>
+				<td>123123</td>
+			</tr>
+			<tr>
+				<td>Parameter 2</td>
+				<td>12312312</td>
+			</tr>
+			<tr>
+				<td>Parameter 3</td>
+				<td>534</td>
+			</tr>
+		</table>
+
 	`
+}
+
+//=======================================================================
+
+/*reference
+https://www.codexworld.com/export-html-table-data-to-excel-using-javascript/#:~:text=JavaScript%20Code%3A,ID%20to%20export%20data%20from.
+*/
+
+// download results function
+function download() {
+
+	let resultTable = document.querySelector('#resultTable');
+	//replace all space with %20
+	let tableHTML = resultTable.outerHTML.replace(/ /g, '%20');
+
+	let element = document.createElement('a');
+	element.href = 'data:application/vnd.ms-excel,' + tableHTML;
+
+	// filename of the downloaded file
+	element.download = 'results.xls';
+
+	element.style.display = 'none';
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
+}
+
+// download results feature
+downloadResult.onclick = () => {
+	
+	if (downloadAllow === true) {
+
+		download();
+
+		console.log('Downloaded')
+
+	} else {
+		return null;
+	}
 
 }
+
 
 
